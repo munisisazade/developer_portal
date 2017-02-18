@@ -1,6 +1,8 @@
 from django.conf.urls import url
+from news.views import TestView, index
 
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
+    url(r'^$', index, name='index'),
+    url(r'^index.asp$', TestView.as_view(), name='main-index')
     # url(r'^',include('news.urls')),
 ]

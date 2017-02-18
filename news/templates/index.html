@@ -1,21 +1,22 @@
 <html lang="en" class="desktop landscape">
     <head>
+       {% load static %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="format-detection" content="telephone=no">
         </script>
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
         <title>Home</title>
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/camera.css" rel="stylesheet">
-        <link href="css/jquery.fancybox.css" rel="stylesheet">
-        <link href="css/subscribe.css" rel="stylesheet">
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/camera.css' %}" rel="stylesheet">
+        <link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet">
+        <link href="{% static 'css/subscribe.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <script src="js/jquery.js"></script>
+        <script src="{% static 'js/jquery.js' %}"></script>
         <style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style>
-        <script src="js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %{% static '}' %}"></script>
         <!--[if lt IE 9]>
         <div style=' clear: both; text-align:center; position: relative;'>
             <a href="https://windows.microsoft.com/en-US/internet-explorer/..">
@@ -25,7 +26,7 @@
         </div>
         <script src="js/html5shiv.js"></script>
         <![endif]-->
-        <script src="js/device.min.js"></script>
+        <script src="{% static 'js/device.min.js' %}"></script>
         <style type="text/css">.fancybox-margin{margin-right:15px;}</style>
     </head>
     <body>
@@ -161,7 +162,7 @@
             <main>
                 <div class="camera_container">
                     <div id="camera" class="camera_wrap">
-                        <div data-src="images/slide-1.jpg">
+                        <div data-src="{% static 'images/slide-1.jpg' %}">
                             <div class="camera_caption fadeIn">
                                 <div class="container">
                                     <h1>Helping each of our<br/>
@@ -174,7 +175,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div data-src="images/slide-2.jpg">
+                        <div data-src="{% static 'images/slide-2.jpg' %}">
                             <div class="camera_caption fadeIn white">
                                 <div class="container">
                                     <h1 class="white">Providing safe and <br/>
@@ -187,14 +188,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div data-src="images/slide-3.jpg">
+                        <div data-src="{% static 'images/slide-3.jpg' %}">
                             <div class="camera_caption fadeIn">
                                 <div class="container">
                                     <h1>Providing students <br/>
                                         scrupulous academics
                                     </h1>
                                     <p>The District has received county, state, and national recognition for outstanding programs
-                                        <br/>in counseling, alternative education, staff development, and labor relations. 
+                                        <br/>in counseling, alternative education, staff development, and labor relations.
                                     </p>
                                     <a href="#" class="btn btn-primary">Read More</a>
                                 </div>
@@ -215,7 +216,7 @@
                                         <p>The School District of Palm Beach County is
                                             committed to providing a world-class education
                                             with excellence and equity to empower each
-                                            student to reach his or her highest potential. 
+                                            student to reach his or her highest potential.
                                         </p>
                                         <a href="#" class="btn btn-default">Read More</a>
                                     </div>
@@ -262,7 +263,7 @@
                             <article class="accordion_cnt row center767 ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-1-panel-0" aria-labelledby="ui-accordion-1-header-0" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
                                 <div class="col-md-5 col-sm-6 col-xs-12 mg-add">
                                     <figure class="thumbnail">
-                                        <a href="#"><img src="images/page-1_img01.jpg" alt=""></a>
+                                        <a href="#"><img src="{% static 'images/page-1_img01.jpg' %}" alt=""></a>
                                     </figure>
                                 </div>
                                 <div class="col-md-7 col-sm-6 col-xs-12">
@@ -280,31 +281,31 @@
                             <div class="accordion_cnt ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-1-panel-1" aria-labelledby="ui-accordion-1-header-1" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
                                 <div class="gallery-wr clearfix">
                                     <a class="thumb" data-fancybox-group="1" href="images/page-1_img02_original.jpg">
-                                    <img src="images/page-1_img02.jpg" alt="">
+                                    <img src="{% static 'images/page-1_img02.jpg' %}" alt="just image">
                                     <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
                                     </a>
                                     <a class="thumb" data-fancybox-group="1" href="images/page-1_img03_original.jpg">
-                                    <img src="images/page-1_img03.jpg" alt="">
+                                    <img src="{% static 'images/page-1_img03.jpg' %}" alt="just image">
                                     <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
                                     </a>
                                     <a class="thumb " data-fancybox-group="1" href="images/page-1_img04_original.jpg">
-                                    <img src="images/page-1_img04.jpg" alt="">
+                                    <img src="{% static 'images/page-1_img04.jpg' %}" alt="just image">
                                     <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
                                     </a>
                                     <a class="thumb" data-fancybox-group="1" href="images/page-1_img05_original.jpg">
-                                    <img src="images/page-1_img05.jpg" alt="">
+                                    <img src="{% static 'images/page-1_img05.jpg' %}" alt="just image">
                                     <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
                                     </a>
                                     <a class="thumb" data-fancybox-group="1" href="images/page-1_img06_original.jpg">
-                                    <img src="images/page-1_img06.jpg" alt="">
+                                    <img src="{% static 'images/page-1_img06.jpg' %}" alt="just image">
                                     <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
                                     </a>
                                     <a class="thumb" data-fancybox-group="1" href="images/page-1_img07_original.jpg">
-                                    <img src="images/page-1_img07.jpg" alt="">
+                                    <img src="{% static 'images/page-1_img07.jpg' %}" alt="just image">
                                     <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
                                     </a>
                                     <a class="thumb" data-fancybox-group="1" href="images/page-1_img08_original.jpg">
-                                    <img src="images/page-1_img08.jpg" alt="">
+                                    <img src="{% static 'images/page-1_img08.jpg' %}" alt="just image">
                                     <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
                                     </a>
                                 </div>
@@ -412,9 +413,9 @@
 					<p class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">Subscribe to our newsletter to receive news, updates, and another stuff by email.</p>
 					<div class="subscribe wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
 					<form class='rd-mailform ' method="post" action="bat/rd-mailform.php">
-					 
+
 					<input type="hidden" name="form-type" value="subscribe"/>
-					 
+
 					<div class="form-group">
 					<label class="form-label" data-add-placeholder for="mailform-input-email">Enter your e-mail</label>
 					<input id="mailform-input-email" type="text" name="email" data-constraints="@NotEmpty @Email"/>
@@ -454,25 +455,25 @@
                 </div>
             </footer>
         </div>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/tm-scripts.js"></script>
-        <script src="js/jquery.cookie.js"></script>
-        <script src="js/jquery.easing.1.3.js"></script>
-        <script src="js/tmstickup.js"></script>
-        <script src="js/jquery.ui.totop.js"></script>
-        <script src="js/superfish.js"></script>
-        <script src="js/jquery.rd-navbar.js"></script>
-        <script src="js/wow.js"></script>
-        <script src="js/jquery.mobile.customized.min.js"></script>
-        <script src="js/camera.js"></script>
-        <script src="js/mailform/jquery.rd-input-label.js"></script>
-        <script src="js/mailform/jquery.form.min.js"></script>
-        <script src="js/mailform/jquery.rd-mailform.min.js"></script>
-        <script src="js/jquery.fancybox.js"></script>
-        <script src="js/jquery.fancybox-media.js"></script>
-        <script src="js/jquery.fancybox-buttons.js"></script>
-        <script src="js/jquery.ui.accordion.min.js"></script>
-        <script src="js/jquery.rd-parallax.js"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/tm-scripts.js' %}"></script>
+        <script src="{% static 'js/jquery.cookie.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+        <script src="{% static 'js/tmstickup.js' %}"></script>
+        <script src="{% static 'js/jquery.ui.totop.js' %}"></script>
+        <script src="{% static 'js/superfish.js' %}"></script>
+        <script src="{% static 'js/jquery.rd-navbar.js' %}"></script>
+        <script src="{% static 'js/wow.js' %}"></script>
+        <script src="{% static 'js/jquery.mobile.customized.min.js' %}"></script>
+        <script src="{% static 'js/camera.js' %}"></script>
+        <script src="{% static 'js/mailform/jquery.rd-input-label.js' %}"></script>
+        <script src="{% static 'js/mailform/jquery.form.min.js' %}"></script>
+        <script src="{% static 'js/mailform/jquery.rd-mailform.min.js' %}"></script>
+        <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+        <script src="{% static 'js/jquery.fancybox-media.js' %}"></script>
+        <script src="{% static 'js/jquery.fancybox-buttons.js' %}"></script>
+        <script src="{% static 'js/jquery.ui.accordion.min.js' %}"></script>
+        <script src="{% static 'js/jquery.rd-parallax.js' %}"></script>
         <!-- End Google Tag Manager -->
         <a href="#" id="toTop" class="toTop fa fa-angle-up" style="display: none;"></a>
         <div class="rd-mobilemenu">
