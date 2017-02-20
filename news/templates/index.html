@@ -161,9 +161,9 @@
             </header>
             <main>
                 <div class="camera_container">
-                    <div id="camera" class="camera_wrap">
+                    <div id="camera" class="owl-carousel camera_wrap">
                       {% for slide in slider %}
-                      <div data-src="/media/{{ slide.image }}">
+                      <div data-src="/media/{{ slide.image }}" class="item">
                           <div class="camera_caption fadeIn">
                               <div class="container">
                                   <h1>
@@ -421,6 +421,12 @@
         <script src="{% static 'js/jquery.js' %}"></script>
         <script src="{% static 'js/owl.carousel.min.js' %}"></script>
         <script type="text/javascript">
+            $('.owl-carousel').owlCarousel({
+            items:1,
+            lazyLoad:true,
+            loop:true,
+            margin:10
+          )};
         </script>
         <!-- <script src="{% static 'js/tm-scripts.js' %}"></script> -->
 
