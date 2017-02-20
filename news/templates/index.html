@@ -162,51 +162,55 @@
             <main>
                 <div class="camera_container">
                     <div id="camera" class="camera_wrap">
-                        <div data-src="{% static 'images/slide-1.jpg' %}">
-                            <div class="camera_caption fadeIn">
-                                <div class="container">
-                                    <h1>Helping each of our<br/>
-                                        students fulfill the potential
-                                    </h1>
-                                    <p>Welcome to Developer Network's Website. Our Developer Network is a small district when it comes to
-                                        <br/>the number of students in it but a large district when it comes to the amount of area it covers.
-                                    </p>
-                                    <a href="#" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-src="{% static 'images/slide-2.jpg' %}">
-                            <div class="camera_caption fadeIn white">
-                                <div class="container">
-                                    <h1 class="white">Providing safe and <br/>
-                                        educational environment
-                                    </h1>
-                                    <p>The district has two high schools, one elementary school and two one-room elementary
-                                        <br/> schools with facilities needed to implement a successful public school program.
-                                    </p>
-                                    <a href="#" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-src="{% static 'images/slide-3.jpg' %}">
-                            <div class="camera_caption fadeIn">
-                                <div class="container">
-                                    <h1>Providing students <br/>
-                                        scrupulous academics
-                                    </h1>
-                                    <p>The District has received county, state, and national recognition for outstanding programs
-                                        <br/>in counseling, alternative education, staff development, and labor relations.
-                                    </p>
-                                    <a href="#" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+                      {% for slide in slider %}
+                      <div data-src="/media/{{ slide.image }}">
+                          <div class="camera_caption fadeIn">
+                              <div class="container">
+                                  <h1>
+                                    {{ slide.title }}
+                                  </h1>
+                                  <p>
+                                    {{ slide.text }}
+                                  </p>
+                                  {% if slide.read_more %}
+                                  <a href="#" class="btn btn-primary">Read More</a>
+                                  {% else %}
+                                  {% endif %}
+                              </div>
+                          </div>
+                      </div>
+
+                      {% endfor %}
+
                     </div>
                 </div>
                 <section class="well bg-primary">
                     <div class="container center767">
                         <div class="row">
-                            <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="2s" data-wow-delay="0.6s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                          {% for x in how_it %}
+                          <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="2s" data-wow-delay="0.6s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                              <article class="block-icon white">
+                                  {% if x.icons == 1 %}
+                                  <span class="material-icons-domain"></span>
+                                  {% elif x.icons == 2 %}
+                                  <span class="material-icons-face"></span>
+                                  {% else %}
+                                  <span class="material-icons-wb_sunny"></span>
+                                  {% endif %}
+                                  <div class="block_caption">
+                                      <h2>{{ x.title }}
+                                          <span>{{ x.desc }}</span>
+                                      </h2>
+                                      <p>
+                                        {{ x.text }}
+                                      </p>
+
+                                  </div>
+
+                              </article>
+                          </div>
+                          {% endfor %}
+                            <!-- <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="2s" data-wow-delay="0.6s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.6s; animation-name: fadeInLeft;">
                                 <article class="block-icon white">
                                     <span class="material-icons-domain"></span>
                                     <div class="block_caption">
@@ -247,7 +251,7 @@
                                         <a href="#" class="btn btn-default">Read More</a>
                                     </div>
                                 </article>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </section>
