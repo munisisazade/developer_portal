@@ -426,8 +426,10 @@
             $('.owl-carousel').owlCarousel({
             items:1,
             lazyLoad:true,
-            loop:false,
-            margin:10
+            loop: true,
+            autoplay:true,
+            autoplayTimeout:4000,
+            autoplayHoverPause:false,
           });
         </script>
         <!-- <script src="{% static 'js/tm-scripts.js' %}"></script> -->
