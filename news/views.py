@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,render_to_response
+from django.template import RequestContext
 from django.urls import  reverse
 from django.views.generic import TemplateView
 # Create your views here
@@ -20,3 +21,7 @@ class TestView(TemplateView):
         context['slider'] = Slider.objects.filter(status=True)
         context['how_it'] = How_it_works.objects.all()
         return context
+
+def NotFound404(request):
+    response = render_to_response('404.html', {},context_instance=RequestContext(request))
+    return response
