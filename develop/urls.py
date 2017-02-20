@@ -18,8 +18,9 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from news.views import NotFound404
 
-handler404 = 'news.views.NotFound404'
+handler404 = NotFound404
 
 urlpatterns = [
     url(r'^Adminqaqalar.aspx', admin.site.urls),
