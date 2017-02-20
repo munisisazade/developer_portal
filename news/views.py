@@ -19,5 +19,5 @@ class TestView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(TestView, self).get_context_data(**kwargs)
         context['slider'] = Slider.objects.filter(status=True)
-        context['how_it'] = How_it_works.objects.all()
+        context['how_it'] = How_it_works.objects.all().order_by('-id')
         return context
