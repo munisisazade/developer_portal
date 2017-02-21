@@ -431,6 +431,15 @@
         <script>
         	$(document).ready(function() {
             $('#stuck_container').TMStickUp({})
+             var o = $('.accordion');
+              if (o.length > 0) {
+                o.accordion({
+                active: false,
+                header: '.accordion_header',
+                heightStyle: 'content',
+                collapsible: true
+              });
+            }
         });
         </script>
         <script type="text/javascript">
