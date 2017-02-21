@@ -459,13 +459,12 @@
         });
         </script>
         <script type="text/javascript">
-            var hov = $('.dropdown:hover');
-            if(hov) {
-                alert("dropdown is open");
-            }
-            else {
-                alert("dropdown is close");
-            }
+            var hov = $('.dropdown');
+            hov.mouseover(function() {
+                  alert("mouse is over dropdown");
+                });
+
+             
         </script>
         <!-- <script src="{% static 'js/tm-scripts.js' %}"></script> -->
 
