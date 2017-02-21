@@ -461,9 +461,11 @@
         <script type="text/javascript">
             var hov = $("li,[class $='dropdown']");
             hov.mouseover(function() {
-                  alert("mouse is over dropdown");
+                  hov.addClass('sfHover');
+                  $('.dropdown-menu').css("display":"block !important");
                 }).mouseout(function() {
-                   alert("mouse is out dropdown");
+                   hov.removeClass('sfHover');
+                   $('.dropdown-menu').css("display":"none");
                 });
 
 
