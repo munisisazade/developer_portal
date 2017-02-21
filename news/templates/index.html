@@ -169,10 +169,10 @@
             {% block index %}
             <main>
                 <div class="camera_container">
-                    <div id="camera" class="owl-carousel camera_wrap">
+                    <div id="camera" class=" camera_wrap">
                       {% for slide in slider %}
-                      <div data-src="/media/{{ slide.image }}" class="item">
-                          <img class="owl-lazy img-responsive" style="max-width:100% !important" src="/media/{{ slide.image }}" alt="">
+                      <div data-src="/media/{{ slide.image }}">
+
                           <div class="camera_caption fadeIn">
                               <div class="container">
                                   <h1>
@@ -441,9 +441,24 @@
                 collapsible: true
               });
             }
+            $('#camera').camera({
+                autoAdvance: true,
+                height: '42.431640625%',
+                minHeight: '300px',
+                pagination: false,
+                thumbnails: false,
+                playPause: false,
+                hover: false,
+                loader: 'none',
+                navigation: true,
+                navigationHover: true,
+                mobileNavHover: false,
+                fx: 'simpleFade'
+            })
         });
         </script>
         <script type="text/javascript">
+
             $('.owl-carousel').owlCarousel({
               items:1,
               lazyLoad:true,
