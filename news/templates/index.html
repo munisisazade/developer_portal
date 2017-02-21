@@ -460,12 +460,12 @@
         </script>
         <script type="text/javascript">
             var hov = $("li,[class $='dropdown']");
-            hov.mouseover(function() {
+            hov.mouseover(function(e) {
                   hov.addClass('sfHover');
-                  $(this+' '+'.dropdown-menu').css("display","block !important");
-                }).mouseout(function() {
+                  console.log(e);
+                }).mouseout(function(a) {
                    hov.removeClass('sfHover');
-                   $(this+' '+'.dropdown-menu').css("display","none");
+                   console.log(a);
                 });
 
 
