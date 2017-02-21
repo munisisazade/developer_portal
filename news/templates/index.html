@@ -19,6 +19,12 @@
         <script src="{% static 'js/jquery.js' %}"></script>
         <style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style>
         <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+        <script src="js/tmstickup.js"></script>
+        <script>
+        	$(document).ready(function() {
+            $('#stuck_container').TMStickUp({})
+        });
+        </script>
         <!--[if lt IE 9]>
         <div style=' clear: both; text-align:center; position: relative;'>
             <a href="https://windows.microsoft.com/en-US/internet-explorer/..">
@@ -161,6 +167,7 @@
                     </nav>
                 </div>
             </header>
+            {% block index %}
             <main>
                 <div class="camera_container">
                     <div id="camera" class="owl-carousel camera_wrap">
@@ -394,6 +401,7 @@
 					</div>
 					</section>
             </main>
+            {% endblock %}
             <footer>
                 <section class="clearfix well4">
                     <div class="container">
