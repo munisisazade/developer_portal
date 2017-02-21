@@ -454,35 +454,18 @@
                 navigationHover: true,
                 mobileNavHover: false,
                 fx: 'simpleFade'
-            })
+            });
+
         });
         </script>
         <script type="text/javascript">
-
-            $('.owl-carousel').owlCarousel({
-              items:1,
-              lazyLoad:true,
-              loop: true,
-              nav: true,
-              autoPlay:true,
-              autoplayTimeout:4000,
-              autoplayHoverPause:false,
-              animateOut: 'slideOutDown',
-              animateIn: 'flipInX',
-              navText: ["<div class='camera_prev'></div>","<div class='camera_next'></div>"],
-              responsive: {
-                0: {
-                  items: 1
-                },
-                600: {
-                  items: 3
-                },
-                1000: {
-                  items: 4
-                }
-              }
-
-          });
+            var hov = $('.dropdown').is(':hover');
+            if(hov) {
+                alert("dropdown is open");
+            }
+            else {
+                alert("dropdown is close");
+            }
         </script>
         <!-- <script src="{% static 'js/tm-scripts.js' %}"></script> -->
 
