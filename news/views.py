@@ -21,3 +21,6 @@ class TestView(TemplateView):
         context['slider'] = Slider.objects.filter(status=True)
         context['how_it'] = How_it_works.objects.all().order_by('id')
         return context
+
+class AboutView(TemplateView):
+    template_name = 'index-1.html'
