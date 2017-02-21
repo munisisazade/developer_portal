@@ -11,6 +11,7 @@
         <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
         <link href="{% static 'css/style.css' %}" rel="stylesheet">
         <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+        <link href="{% static 'css/animate.css' %}" rel="stylesheet">
         <link href="{% static 'css/camera.css' %}" rel="stylesheet">
         <link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet">
         <link href="{% static 'css/subscribe.css' %}" rel="stylesheet">
@@ -431,6 +432,8 @@
             autoplay:true,
             autoplayTimeout:4000,
             autoplayHoverPause:false,
+            animateOut: 'slideOutDown',
+            animateIn: 'flipInX',
             navText: ["<div class='camera_prev'></div>","<div class='camera_next'></div>"]
 
           });
