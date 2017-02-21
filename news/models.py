@@ -1,10 +1,19 @@
 from django.db import models
 from datetime import datetime
 from slugify import slugify
+from django.utils import timezone
+from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 # Create your models here.
 
 def image_path(instance,filename):
     return "slider/%s_%s" % (datetime.today().strftime("%d_%m_%Y_%H_%M") ,filename.replace(" ","_"))
+
+def news_path(instance,filename):
+    return "news/%s_%s" % (datetime.today().strftime("%d_%m_%Y_%H_%M") ,filename.replace(" ","_"))
+
+
+
 
 icon = (
     (1,'Bina'),
@@ -12,6 +21,14 @@ icon = (
     (3,'Gunes'),
 )
 
+
+
+class Author(models.Model):
+    user = models.OneToOneField(User)
+    about = models.TextField(null=True,blank=True)
+
+    def __str__(self):
+        return str(self.user.full_name if self.user.full_name else "Zehmet olmasa adinizi qeyd edin")
 
 """
     This is for slider
@@ -61,11 +78,49 @@ class ArticleCategory(models.Model):
         self.slug = slugify(self.title.lower().replace('ə', 'e').replace(' ', '-'))
         super(ArticleCategory, self).save(*args, **kwargs)
 
+
+
 class ArticleTags(ArticleCategory):
     class Meta:
         verbose_name = 'Tag'
         verbose_name_plural = 'Taglar'
 
+
+
+class RelationTagArticle(models.Model):
+    article_obj = models.ForeignKey('Article')
+    tag_obj = models.ForeignKey('ArticleTags')
+
+    def __str__(self):
+        return "%s %s" % (self.article_obj.title,self.tag_object.title)
+
+
+class RelationCategoryArticle(models.Model):
+    article_obj = models.ForeignKey('Article')
+    category_obj = models.ForeignKey('ArticleCategory')
+
+    def __str__(self):
+        return "%s %s" % (self.article_obj.title, self.category_object.title)
+
+
+
+class ArticleImages(models.Model):
+    article_obj = models.ForeignKey('Article')
+    image = models.ImageField(upload_to=news_path)
+
+    def __str__(self):
+        return str(self.image.name)
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=255,verbose_name="Basligi")
+    content = RichTextField(config_name='awesome_ckeditor',verbose_name="Kontenti")
+    author = models.ForeignKey('Author')
+    status = models.BooleanField(default=True,verbose_name="Xeberin statusu")
+    date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return str(self.title)
 
 
 class Mesagges(models.Model):
@@ -90,3 +145,12 @@ class Contact_us(models.Model):
 
     def __str__(self):
         return str(self.email if self.email else "adsiz")
+
+
+
+class PrivacyPolicy(models.Model):
+    title = models.CharField(max_length=255)
+    text = models.TextField()
+
+    def __str__(self):
+        return str(self.title)
