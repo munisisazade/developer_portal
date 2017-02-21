@@ -42,3 +42,31 @@ class How_it_works(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+
+
+
+class Mesagges(models.Model):
+    full_name = models.CharField(max_length=100,verbose_name="Adi",null=True,blank=True)
+    email = models.EmailField(null=True,blank=True)
+    message = models.TextField(verbose_name="Mesaj",null=True,blank=True)
+
+    def __str__(self):
+        return str(self.full_name if self.full_name else "adsiz")
+
+
+
+
+class Contact_us(models.Model):
+    facebook = models.CharField(max_length=255,null=True,blank=True)
+    twitter = models.CharField(max_length=255,null=True,blank=True)
+    googleplus = models.CharField(max_length=255,null=True,blank=True)
+    place = models.CharField(max_length=255,null=True,blank=True)
+    phone_1 = models.CharField(max_length=20,null=True,blank=True)
+    phone_2 = models.CharField(max_length=20, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+
+    def __str__(self):
+        return str(self.email if self.email else "adsiz")

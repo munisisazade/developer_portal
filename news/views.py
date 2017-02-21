@@ -30,3 +30,6 @@ class GalleryView(TemplateView):
 
 class ContactsView(TemplateView):
     template_name = 'index-4.html'
+
+class PrivacyView(TemplateView):
+    template_name = 'index-5.html'
