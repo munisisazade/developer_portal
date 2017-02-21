@@ -20,11 +20,7 @@
         <style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style>
         <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
         <script src="{% static 'js/tmstickup.js' %}"></script>
-        <script>
-        	$(document).ready(function() {
-            $('#stuck_container').TMStickUp({})
-        });
-        </script>
+
         <!--[if lt IE 9]>
         <div style=' clear: both; text-align:center; position: relative;'>
             <a href="https://windows.microsoft.com/en-US/internet-explorer/..">
@@ -431,6 +427,11 @@
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <script src="{% static 'js/jquery.js' %}"></script>
         <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script>
+        	$(document).ready(function() {
+            $('#stuck_container').TMStickUp({})
+        });
+        </script>
         <script type="text/javascript">
             $('.owl-carousel').owlCarousel({
               items:1,
