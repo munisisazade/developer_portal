@@ -24,3 +24,6 @@ class TestView(TemplateView):
 
 class AboutView(TemplateView):
     template_name = 'index-1.html'
+
+class GalleryView(TemplateView):
+    template_name = 'index-2.html'
