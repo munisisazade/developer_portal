@@ -61,6 +61,11 @@ class ArticleCategory(models.Model):
         self.slug = slugify(self.title.lower().replace('ə', 'e').replace(' ', '-'))
         super(ArticleCategory, self).save(*args, **kwargs)
 
+class ArticleTags(ArticleCategory):
+    class Meta:
+        verbose_name = 'Tag'
+        verbose_name_plural = 'Taglar'
+
 
 
 class Mesagges(models.Model):
