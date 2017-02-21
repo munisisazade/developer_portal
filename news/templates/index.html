@@ -44,7 +44,7 @@
                         <div class="container">
                             <div class="navbar-header">
                                 <h1 class="navbar-brand">
-                                    <a data-type="rd-navbar-brand" href="./">Itelpark
+                                    <a data-type="rd-navbar-brand" href="{% url 'index' %}">Itelpark
                                     </a>
                                 </h1>
                             </div>
@@ -55,11 +55,11 @@
                             </ul>
                             <ul class="navbar-nav sf-menu sf-js-enabled sf-arrows" data-type="navbar">
                                 <li class="active">
-                                    <a href="./">Ana səhifə</a>
+                                    <a href="{% url 'index' %}">Ana səhifə</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="{% url 'about' %}" class="sf-with-ul">Haqqimizda </a>
-                                    <ul class="dropdown-menu mrg-zero" >
+                                    <a href="{% url 'about' %}" class="sf-with-ul">Məqalələr</a>
+                                    <ul class="dropdown-menu mrg-zero">
                                         <li>
                                             <a href="#"> Who we are</a>
                                         </li>
@@ -67,16 +67,8 @@
                                             <a href="#">Departments</a>
                                         </li>
                                         <li>
-                                            <a class="act sf-with-ul" href="#">Schools</a>
-                                            <ul class="dropdown-menu" style="display: none;">
-                                                <li><a href="#">Business Department</a></li>
-                                                <li><a href="#">Community Schools</a></li>
-                                                <li><a href="#">Curriculum Office</a></li>
-                                                <li><a href="#">Federal Programs</a></li>
-                                                <li><a href="#">Food Services</a></li>
-                                                <li><a href="#">Maintenance and Operations</a></li>
-                                                <li><a href="#">Nursing Services</a></li>
-                                            </ul>
+                                            <a href="#">Schools</a>
+
                                         </li>
                                         <li>
                                             <a href="#">Staff</a>
@@ -93,7 +85,7 @@
                                     <a href="{% url 'gallery' %}">Qalareya</a>
                                 </li>
                                 <li>
-                                    <a href="index-3.html">Məqalələr</a>
+                                    <a href="{% url 'about' %}">Haqqimizda</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'contact' %}">Əlaqə</a>
@@ -118,11 +110,11 @@
                             </ul>
                             <ul class="navbar-nav sf-menu sf-js-enabled sf-arrows" data-type="navbar">
                                 <li class="active">
-                                    <a href="/">Ana səhifə</a>
+                                    <a href="{% url 'index' %}">Ana səhifə</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="{% url 'about' %}" class="sf-with-ul">Haqqimizda </a>
-                                    <ul class="dropdown-menu" style="display: none;">
+                                    <a href="{% url 'about' %}" class="sf-with-ul">Haqqimizda Məqalələr</a>
+                                    <ul class="dropdown-menu">
                                         <li>
                                             <a href="#"> Who we are</a>
                                         </li>
@@ -130,16 +122,8 @@
                                             <a href="#">Departments</a>
                                         </li>
                                         <li>
-                                            <a class="act sf-with-ul" href="#">Schools</a>
-                                            <ul class="dropdown-menu" style="display: none;">
-                                                <li><a href="#">Business Department</a></li>
-                                                <li><a href="#">Community Schools</a></li>
-                                                <li><a href="#">Curriculum Office</a></li>
-                                                <li><a href="#">Federal Programs</a></li>
-                                                <li><a href="#">Food Services</a></li>
-                                                <li><a href="#">Maintenance and Operations</a></li>
-                                                <li><a href="#">Nursing Services</a></li>
-                                            </ul>
+                                            <a href="#">Schools</a>
+
                                         </li>
                                         <li>
                                             <a href="#">Staff</a>
@@ -156,7 +140,7 @@
                                     <a href="{% url 'gallery' %}">Qalareya</a>
                                 </li>
                                 <li>
-                                    <a href="index-3.html">Məqalələr</a>
+                                    <a href="{% url 'about' %}">Haqqimizda</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'contact' %}">Əlaqə</a>
@@ -477,9 +461,9 @@
         <a href="#" id="toTop" class="toTop fa fa-angle-up" style="display: none;"></a>
         <div class="rd-mobilemenu">
             <ul class="rd-mobilemenu_ul">
-                <li class="active"><a href="./">Ana səhifə</a></li>
+                <li class="active"><a href="{% url 'index' %}">Ana səhifə</a></li>
                 <li>
-                    <a href="{% url 'about' %}" class="rd-with-ul">Haqqimizda <span class="rd-submenu-toggle"></span></a>
+                    <a href="{% url 'about' %}" class="rd-with-ul">Məqalələr <span class="rd-submenu-toggle"></span></a>
                     <ul class="rd-mobilemenu_submenu" style="display: none;">
                         <li>
                             <a href="#"> Who we are</a>
@@ -489,15 +473,6 @@
                         </li>
                         <li>
                             <a class="act" href="#">Schools</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Business Department</a></li>
-                                <li><a href="#">Community Schools</a></li>
-                                <li><a href="#">Curriculum Office</a></li>
-                                <li><a href="#">Federal Programs</a></li>
-                                <li><a href="#">Food Services</a></li>
-                                <li><a href="#">Maintenance and Operations</a></li>
-                                <li><a href="#">Nursing Services</a></li>
-                            </ul>
                         </li>
                         <li>
                             <a href="#">Staff</a>
@@ -511,7 +486,7 @@
                     </ul>
                 </li>
                 <li><a href="{% url 'gallery' %}">Qalareya</a></li>
-                <li><a href="index-3.html">Məqalələr</a></li>
+                <li><a href="{% url 'about' %}">Məqalələr</a></li>
                 <li><a href="{% url 'contact' %}">Əlaqə</a></li>
             </ul>
         </div>
