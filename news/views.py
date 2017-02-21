@@ -27,3 +27,6 @@ class AboutView(TemplateView):
 
 class GalleryView(TemplateView):
     template_name = 'index-2.html'
+
+class ContactsView(TemplateView):
+    template_name = 'index-4.html'
