@@ -462,10 +462,10 @@
             var hov = $("li,[class $='dropdown']");
             hov.mouseover(function(e) {
                   hov.addClass('sfHover');
-                  console.log(e);
+                  console.log(e.to_element);
                 }).mouseout(function(a) {
                    hov.removeClass('sfHover');
-                   console.log(a);
+                   console.log(a.to_element);
                 });
 
 
