@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect,render_to_response
 from django.template import RequestContext
 from django.http import HttpResponse
 from django.urls import  reverse
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,DetailView
 # Create your views here
-from news.models import Slider,How_it_works,ArticleCategory,Contact_us
+from news.models import Slider,How_it_works,ArticleCategory,Contact_us,ArticleCategory
 """
     Just in case test views
 """
@@ -44,3 +44,14 @@ class ContactsView(TemplateAllData):
 
 class PrivacyView(TemplateAllData):
     template_name = 'index-5.html'
+
+
+class CategoryDetailView(DetailView):
+    model = ArticleCategory
+    template_name = 'index-3.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoryDetailView, self).get_context_data(**kwargs)
+        context['categorys'] = ArticleCategory.objects.all()
+        context['contact'] = Contact_us.objects.all()
+        return context

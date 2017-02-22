@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from news.views import TestView, index,AboutView,GalleryView,ContactsView,PrivacyView
+from news.views import TestView, index,AboutView,GalleryView,ContactsView,PrivacyView,CategoryDetailView
 
 urlpatterns = [
     url(r'^$', index, name='index'),
@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^gallery.aspx$', GalleryView.as_view(), name='gallery'),
     url(r'^contact.aspx$', ContactsView.as_view(), name='contact'),
     url(r'^privacy_policy.aspx$', PrivacyView.as_view(), name='privacy'),
+    url(r'^category/(?P<slug>[-\w]+)/$',CategoryDetailView.as_view() , name='category'),
     # url(r'^',include('news.urls')),
 ]

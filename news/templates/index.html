@@ -73,7 +73,7 @@
                                     <ul class="dropdown-menu mrg-zero">
                                         {% for cat in categorys %}
                                         <li>
-                                            <a href="">{{ cat.title }}</a>
+                                            <a href="{% url 'category' slug=cat.slug %}">{{ cat.title }}</a>
                                         </li>
                                         {% empty %}
                                         <li>
@@ -465,7 +465,7 @@
                     <ul class="rd-mobilemenu_submenu" style="display: none;">
                         {% for cat in categorys %}
                         <li>
-                            <a href="">{{ cat.title }}</a>
+                            <a href="{% url 'category' slug=cat.slug %}">{{ cat.title }}</a>
                         </li>
                         {% empty %}
                         <li>
