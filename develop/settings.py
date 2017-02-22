@@ -114,6 +114,7 @@ CKEDITOR_CONFIGS = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'develop.middleware.add_fake_middleware.MyCookieProcessingMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

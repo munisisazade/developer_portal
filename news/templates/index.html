@@ -49,9 +49,20 @@
                                 </h1>
                             </div>
                             <ul class="inline-list">
-                                <li><a class="fa fa-facebook" href="#"></a></li>
-                                <li><a class="fa fa-twitter" href="#"></a></li>
-                                <li><a class="fa fa-google-plus" href="#"></a></li>
+                                {% for x in contact %}
+                                    {% if x.facebook %}
+                                    <li><a class="fa fa-facebook" target="_blank" href="{{ x.facebook }}"></a></li>
+                                    {% else %}
+                                    {% endif %}
+                                    {% if x.twitter %}
+                                    <li><a class="fa fa-twitter" target="_blank" href="{{ x.twitter }}"></a></li>
+                                    {% else %}
+                                    {% endif %}
+                                    {% if x.googleplus %}
+                                    <li><a class="fa fa-google-plus" target="_blank" href="{{ x.googleplus }}"></a></li>
+                                    {% else %}
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                             <ul class="navbar-nav sf-menu sf-js-enabled sf-arrows" data-type="navbar">
                                 <li class="active">
@@ -60,25 +71,15 @@
                                 <li class="dropdown">
                                     <a href="{% url 'about' %}" class="sf-with-ul">Məqalələr</a>
                                     <ul class="dropdown-menu mrg-zero">
+                                        {% for cat in categorys %}
                                         <li>
-                                            <a href="#"> Who we are</a>
+                                            <a href="">{{ cat.title }}</a>
                                         </li>
+                                        {% empty %}
                                         <li>
-                                            <a href="#">Departments</a>
+                                            <a href="{% url 'about' %}">Məqalələr</a>
                                         </li>
-                                        <li>
-                                            <a href="#">Schools</a>
-
-                                        </li>
-                                        <li>
-                                            <a href="#">Staff</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Calendars &amp; news </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Useful Links</a>
-                                        </li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
                                 <li>
@@ -104,9 +105,20 @@
                                 </h1>
                             </div>
                             <ul class="inline-list">
-                                <li><a class="fa fa-facebook" href="#"></a></li>
-                                <li><a class="fa fa-twitter" href="#"></a></li>
-                                <li><a class="fa fa-google-plus" href="#"></a></li>
+                                {% for x in contact %}
+                                    {% if x.facebook %}
+                                    <li><a class="fa fa-facebook" target="_blank" href="{{ x.facebook }}"></a></li>
+                                    {% else %}
+                                    {% endif %}
+                                    {% if x.twitter %}
+                                    <li><a class="fa fa-twitter" target="_blank" href="{{ x.twitter }}"></a></li>
+                                    {% else %}
+                                    {% endif %}
+                                    {% if x.googleplus %}
+                                    <li><a class="fa fa-google-plus" target="_blank" href="{{ x.googleplus }}"></a></li>
+                                    {% else %}
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                             <ul class="navbar-nav sf-menu sf-js-enabled sf-arrows" data-type="navbar">
                                 <li class="active">
@@ -115,25 +127,15 @@
                                 <li class="dropdown">
                                     <a href="{% url 'about' %}" class="sf-with-ul">Haqqimizda Məqalələr</a>
                                     <ul class="dropdown-menu">
+                                        {% for cat in categorys %}
                                         <li>
-                                            <a href="#"> Who we are</a>
+                                            <a href="">{{ cat.title }}</a>
                                         </li>
+                                        {% empty %}
                                         <li>
-                                            <a href="#">Departments</a>
+                                            <a href="{% url 'about' %}">Məqalələr</a>
                                         </li>
-                                        <li>
-                                            <a href="#">Schools</a>
-
-                                        </li>
-                                        <li>
-                                            <a href="#">Staff</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Calendars &amp; news </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Useful Links</a>
-                                        </li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
                                 <li>
@@ -390,15 +392,20 @@
                     <div class="container">
                         <div class="contact pull-left">
                             <span class="material-icons-location_on"></span>
-                            <address class="h4 text-primary">New York, 4578 Marmora Road, <br>
-                                Glasgow D04 89GR
+                            <address class="h4 text-primary">{% for x in contact %}{{ x.place }}{% endfor %}
                             </address>
                         </div>
                         <div class="contact pull-right">
                             <span class="material-icons-local_phone"></span>
-                            <a href="callto:#">800-2345-6789; </a>
-                            <a href="callto:#"> 800-2345-6790</a>
-                            <p class="offs">7 days a week from 8:00 am to 7:00 pm</p>
+                             {% for x in contact %}
+                                {% if x.phone_1 %}
+                                <a href="callto:{{ x.phone_1 }}">{{ x.phone_1 }}; </a>
+                                {% endif %}
+                                {% if x.phone_2 %}
+                                <a href="callto:{{ x.phone_2 }}"> {{ x.phone_2 }}</a>
+                                {% endif %}
+                                <p>{{ x.email }}</p>
+                            {% endfor %}
                         </div>
                     </div>
                 </section>
@@ -443,15 +450,6 @@
         });
         </script>
         <script type="text/javascript">
-           // var hov = $("li,[class $='dropdown']");
-           // hov.mouseover(function(e,b) {
-            //      hov.addClass('sfHover');
-             //     console.log(e,b);
-             //   }).mouseout(function(a) {
-             //      hov.removeClass('sfHover');
-              //     console.log(a.to_element);
-              //  });
-
 
         </script>
         <!-- <script src="{% static 'js/tm-scripts.js' %}"></script> -->
@@ -465,24 +463,15 @@
                 <li>
                     <a href="{% url 'about' %}" class="rd-with-ul">Məqalələr <span class="rd-submenu-toggle"></span></a>
                     <ul class="rd-mobilemenu_submenu" style="display: none;">
+                        {% for cat in categorys %}
                         <li>
-                            <a href="#"> Who we are</a>
+                            <a href="">{{ cat.title }}</a>
                         </li>
+                        {% empty %}
                         <li>
-                            <a href="#">Departments</a>
+                            <a href="{% url 'about' %}">Məqalələr</a>
                         </li>
-                        <li>
-                            <a class="act" href="#">Schools</a>
-                        </li>
-                        <li>
-                            <a href="#">Staff</a>
-                        </li>
-                        <li>
-                            <a href="#">Calendars &amp; news </a>
-                        </li>
-                        <li>
-                            <a href="#">Useful Links</a>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </li>
                 <li><a href="{% url 'gallery' %}">Qalareya</a></li>

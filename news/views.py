@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.urls import  reverse
 from django.views.generic import TemplateView
 # Create your views here
-from news.models import Slider,How_it_works
+from news.models import Slider,How_it_works,ArticleCategory,Contact_us
 """
     Just in case test views
 """
@@ -13,8 +13,18 @@ from news.models import Slider,How_it_works
 def index(request):
     return redirect(reverse('main-index'))
 
+class TemplateAllData(TemplateView):
 
-class TestView(TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super(TemplateAllData, self).get_context_data(**kwargs)
+        context['categorys'] = ArticleCategory.objects.all()
+        context['contact'] = Contact_us.objects.all()
+        return context
+
+
+
+
+class TestView(TemplateAllData):
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
@@ -23,14 +33,14 @@ class TestView(TemplateView):
         context['how_it'] = How_it_works.objects.all().order_by('id')
         return context
 
-class AboutView(TemplateView):
+class AboutView(TemplateAllData):
     template_name = 'index-1.html'
 
-class GalleryView(TemplateView):
+class GalleryView(TemplateAllData):
     template_name = 'index-2.html'
 
-class ContactsView(TemplateView):
+class ContactsView(TemplateAllData):
     template_name = 'index-4.html'
 
-class PrivacyView(TemplateView):
+class PrivacyView(TemplateAllData):
     template_name = 'index-5.html'
