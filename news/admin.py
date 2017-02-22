@@ -21,6 +21,9 @@ class ArticleImagesAdmin(admin.ModelAdmin):
 class Contact_usAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons admin-modelicon-build">contacts</i>'
 
+class ArticleTagsAdmin(admin.ModelAdmin):
+    icon = '<i class="material-icons admin-modelicon-build">loyalty</i>'
+
 
 
 
@@ -29,13 +32,13 @@ admin.site.register(Slider,SliderAdmin)
 admin.site.register(How_it_works)
 admin.site.register(Author,AuthorAdmin)
 admin.site.register(ArticleCategory)
-admin.site.register(ArticleTags)
-admin.site.register(RelationTagArticle)
+admin.site.register(ArticleTags,ArticleTagsAdmin)
+admin.site.register(RelationTagArticle,ArticleTagsAdmin)
 admin.site.register(RelationCategoryArticle)
 admin.site.register(ArticleImages,ArticleImagesAdmin)
 admin.site.register(Article,ArticleAdmin)
 admin.site.register(Mesagges)
-admin.site.register(Contact_us)
+admin.site.register(Contact_us,Contact_usAdmin)
 admin.site.register(PrivacyPolicy)
 
 
