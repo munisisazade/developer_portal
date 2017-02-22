@@ -24,20 +24,28 @@ class Contact_usAdmin(admin.ModelAdmin):
 class ArticleTagsAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons admin-modelicon-build">loyalty</i>'
 
+class ArticleCategoryAdmin(admin.ModelAdmin):
+    icon = '<i class="material-icons admin-modelicon-build">library_books</i>'
+
+class MesaggesAdmin(admin.ModelAdmin):
+    icon = '<i class="material-icons admin-modelicon-build">message</i>'
+
+class How_it_worksAdmin(admin.ModelAdmin):
+    icon = '<i class="material-icons admin-modelicon-build">work</i>'
 
 
 
 
 admin.site.register(Slider,SliderAdmin)
-admin.site.register(How_it_works)
+admin.site.register(How_it_works,How_it_worksAdmin)
 admin.site.register(Author,AuthorAdmin)
-admin.site.register(ArticleCategory)
+admin.site.register(ArticleCategory,ArticleCategoryAdmin)
 admin.site.register(ArticleTags,ArticleTagsAdmin)
 admin.site.register(RelationTagArticle,ArticleTagsAdmin)
-admin.site.register(RelationCategoryArticle)
+admin.site.register(RelationCategoryArticle,ArticleCategoryAdmin)
 admin.site.register(ArticleImages,ArticleImagesAdmin)
 admin.site.register(Article,ArticleAdmin)
-admin.site.register(Mesagges)
+admin.site.register(Mesagges,MesaggesAdmin)
 admin.site.register(Contact_us,Contact_usAdmin)
 admin.site.register(PrivacyPolicy)
 
