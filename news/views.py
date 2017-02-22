@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect,render_to_response
 from django.template import RequestContext
+from django.http import HttpResponse
 from django.urls import  reverse
 from django.views.generic import TemplateView
 # Create your views here

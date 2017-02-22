@@ -28,7 +28,7 @@ class Author(models.Model):
     about = models.TextField(null=True,blank=True)
 
     def __str__(self):
-        return str(self.user.full_name if self.user.full_name else "Zehmet olmasa adinizi qeyd edin")
+        return self.user.username
 
 """
     This is for slider
