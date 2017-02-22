@@ -25,7 +25,7 @@ SECRET_KEY = 'ermn@t3e6)2lwtgca9nfyxf$h6b9fpo%(!h%mtgt7tyy2ut6m*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['itelpark.com','www.itelpark.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -114,7 +114,6 @@ CKEDITOR_CONFIGS = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'develop.middleware.add_fake_middleware.MyCookieProcessingMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -200,11 +199,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = 'static'
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static"),
-   '/home/munis/Documents/unicopycenter/static',
-]
+STATIC_ROOT = 'static'
+# STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, "static"),
+#    '/home/munis/Documents/unicopycenter/static',
+# ]
 
 
 MEDIA_URL = '/media/'
