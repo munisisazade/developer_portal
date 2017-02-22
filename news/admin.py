@@ -9,11 +9,14 @@ class SliderAdmin(admin.ModelAdmin):
     list_display = ('show_image','title','text','status','read_more')
     icon = '<i class="material-icons admin-modelicon-build">picture_in_picture</i>'
 
+class AuthorIconAdmin(admin.ModelAdmin):
+    icon = '<i class="material-icons admin-modelicon-build">recent_actors</i>'
+
 
 
 admin.site.register(Slider,SliderAdmin)
 admin.site.register(How_it_works)
-admin.site.register(Author)
+admin.site.register(Author,AuthorIconAdmin)
 admin.site.register(ArticleCategory)
 admin.site.register(ArticleTags)
 admin.site.register(RelationTagArticle)
