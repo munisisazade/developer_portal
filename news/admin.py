@@ -7,6 +7,7 @@ from news.models import Slider,How_it_works,Author,ArticleCategory,ArticleTags,R
 class SliderAdmin(admin.ModelAdmin):
     readonly_fields = ('show_image',)
     list_display = ('show_image','title','text','status','read_more')
+    icon = 'mdi-image-compare'
 
 
 
