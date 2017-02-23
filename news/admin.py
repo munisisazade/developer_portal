@@ -13,6 +13,9 @@ class ImageTabularAdmin(admin.TabularInline):
     #         'fields': ['upload_file', 'file_name', 'fayl_name']
     #     }),
     # ]
+class RelationTagArticleTabularAdmin(admin.TabularInline):
+    model = RelationTagArticle
+    extra = 1
 
 
 class SliderAdmin(admin.ModelAdmin):
@@ -24,7 +27,7 @@ class AuthorAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons admin-modelicon-build">recent_actors</i>'
 
 class ArticleAdmin(admin.ModelAdmin):
-    inlines = [ImageTabularAdmin,]
+    inlines = [ImageTabularAdmin,RelationTagArticleTabularAdmin]
     icon = '<i class="material-icons admin-modelicon-build">note_add</i>'
 
 class ArticleImagesAdmin(admin.ModelAdmin):
