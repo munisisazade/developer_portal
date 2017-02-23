@@ -25,6 +25,7 @@ SECRET_KEY = 'ermn@t3e6)2lwtgca9nfyxf$h6b9fpo%(!h%mtgt7tyy2ut6m*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['www.itelpark.com','itelpark.com']
 
 
