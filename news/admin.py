@@ -2,6 +2,17 @@ from django.contrib import admin
 from news.models import Slider,How_it_works,Author,ArticleCategory,ArticleTags,RelationTagArticle,RelationCategoryArticle,ArticleImages,Article,Mesagges,Contact_us,PrivacyPolicy
 # Register your models here.
 
+class ImageTabularAdmin(admin.TabularInline):
+    model = ArticleImages
+    extra = 1
+    # readonly_fields = ('upload_file', 'file_name', 'fayl_name')
+    # raw_id_fields = ('relation',)
+    # exclude = ('upload_file',)
+    # fieldsets = [
+    #     ('İcra olunmalıdır', {
+    #         'fields': ['upload_file', 'file_name', 'fayl_name']
+    #     }),
+    # ]
 
 
 class SliderAdmin(admin.ModelAdmin):
@@ -13,6 +24,7 @@ class AuthorAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons admin-modelicon-build">recent_actors</i>'
 
 class ArticleAdmin(admin.ModelAdmin):
+    inlines = [ImageTabularAdmin,]
     icon = '<i class="material-icons admin-modelicon-build">note_add</i>'
 
 class ArticleImagesAdmin(admin.ModelAdmin):
