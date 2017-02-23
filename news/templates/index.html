@@ -216,8 +216,8 @@
                             {% for news in feed %}
                             <div class="accordion_header wow fadeInUp ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" data-wow-duration="2s" data-wow-delay="0.4s" role="tab" id="ui-accordion-1-header-0" aria-controls="ui-accordion-1-panel-0" aria-selected="false" tabindex="0" >
                                 <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
-                                <time class="h3" datetime="2015-01-01">27/06</time>
-                                <h3>Annual School Planning Retreat on Feb. </h3>
+                                <time class="h3" datetime="2015-01-01">{{ news.date }}</time>
+                                <h3>{{ news.title }} </h3>
                             </div>
                             <article class="accordion_cnt row center767 ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-1-panel-0" aria-labelledby="ui-accordion-1-header-0" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
                                 <div class="col-md-5 col-sm-6 col-xs-12 mg-add">
@@ -226,7 +226,7 @@
                                     </figure>
                                 </div>
                                 <div class="col-md-7 col-sm-6 col-xs-12">
-                                    <p>Families, staff (and students in middle and high schools) are expected and encouraged to help their schools set priorities by participating in their school’s planning process. Even if you can't make it to the Retreat, find out more about what you can expect with your school’s planning process. Attend the School Planning Retreat on Saturday, Feb. 20 for an opportunity to work together on your school's Balanced Scorecard, academic plan and budget for the 2016-17 school year. Talk to your school’s principal about how you can attend and participate in your school’s planning process. This year's retreat will be held at the High School.</p>
+                                    {{ news.content|safe }}
                                 </div>
                             </article>
                             <div class="container">
