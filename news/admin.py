@@ -19,7 +19,7 @@ class RelationTagArticleTabularAdmin(admin.TabularInline):
 
 
 class RelationCategoryArticleTabularAdmin(admin.TabularInline):
-    model = RelationTagArticle
+    model = RelationCategoryArticle
     extra = 1
 
 
