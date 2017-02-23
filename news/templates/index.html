@@ -213,6 +213,7 @@
                     <div class="container">
                         <h2>Xəbərlər və məqalələr</h2>
                         <div class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
+                            {% for news in feed %}
                             <div class="accordion_header wow fadeInUp ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" data-wow-duration="2s" data-wow-delay="0.4s" role="tab" id="ui-accordion-1-header-0" aria-controls="ui-accordion-1-panel-0" aria-selected="false" tabindex="0" >
                                 <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
                                 <time class="h3" datetime="2015-01-01">27/06</time>
@@ -231,6 +232,7 @@
                             <div class="container">
                                 <hr>
                             </div>
+                            {% endfor %}
                             <div class="accordion_header wow fadeInUp ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" data-wow-duration="2s" data-wow-delay="0.6s" role="tab" id="ui-accordion-1-header-1" aria-controls="ui-accordion-1-panel-1" aria-selected="false" tabindex="-1" >
                                 <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
                                 <time class="h3" datetime="2015-01-01">25/06</time>

@@ -117,6 +117,7 @@ class Article(models.Model):
     content = RichTextField(config_name='awesome_ckeditor',verbose_name="Kontenti")
     author = models.ForeignKey('Author')
     status = models.BooleanField(default=True,verbose_name="Xeberin statusu")
+    home_page_status = models.BooleanField(default=True,verbose_name="Ana səhifədə görünsün?")
     date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
