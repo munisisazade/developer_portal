@@ -7,8 +7,8 @@ import os
 
 @receiver(post_delete, sender=Slider, dispatch_uid="delete_slider")
 def delete_slider(sender,**kwargs):
-    image = kwargs.get('instance')
-    file = os.path.join(settings.BASE_DIR,image)
+    slider = kwargs.get('instance')
+    file = os.path.join(settings.BASE_DIR,settings.MEDIA_ROOT,slider.image.name)
     if os.path.isfile(file):
         os.remove(file)
         obj = ArticleCategory(title='Obyekt silindi')
