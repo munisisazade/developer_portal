@@ -18,6 +18,11 @@ class RelationTagArticleTabularAdmin(admin.TabularInline):
     extra = 1
 
 
+class RelationCategoryArticleTabularAdmin(admin.TabularInline):
+    model = RelationTagArticle
+    extra = 1
+
+
 class SliderAdmin(admin.ModelAdmin):
     readonly_fields = ('show_image',)
     list_display = ('show_image','title','text','status','read_more')
@@ -27,7 +32,7 @@ class AuthorAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons admin-modelicon-build">recent_actors</i>'
 
 class ArticleAdmin(admin.ModelAdmin):
-    inlines = [ImageTabularAdmin,RelationTagArticleTabularAdmin]
+    inlines = [ImageTabularAdmin,RelationTagArticleTabularAdmin,RelationCategoryArticleTabularAdmin]
     icon = '<i class="material-icons admin-modelicon-build">note_add</i>'
 
 class ArticleImagesAdmin(admin.ModelAdmin):
