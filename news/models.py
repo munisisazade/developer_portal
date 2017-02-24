@@ -163,3 +163,11 @@ class PrivacyPolicy(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+
+
+class Haqqimizda(models.Model):
+    html = models.TextField()
+
+    def __str__(self):
+        return self.html[:10]
