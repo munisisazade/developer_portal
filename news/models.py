@@ -92,7 +92,7 @@ class RelationTagArticle(models.Model):
     tag_obj = models.ForeignKey('ArticleTags')
 
     def __str__(self):
-        return "%s %s" % (self.article_obj.title,self.tag_object.title)
+        return "%s %s" % (self.article_obj.title,self.tag_obj.title)
 
 
 class RelationCategoryArticle(models.Model):
@@ -100,7 +100,7 @@ class RelationCategoryArticle(models.Model):
     category_obj = models.ForeignKey('ArticleCategory')
 
     def __str__(self):
-        return "%s %s" % (self.article_obj.title, self.category_object.title)
+        return "%s %s" % (self.article_obj.title, self.category_obj.title)
 
 
 
