@@ -50,11 +50,11 @@ class PrivacyView(TemplateAllData):
 class CategoryDetailView(DetailView):
     model = ArticleCategory
     template_name = 'index-3.html'
-    queryset = RelationCategoryArticle.objects.filter(category_obj__slug=self.kwargs.get('slug'))
+
 
     def get_context_data(self, **kwargs):
         context = super(CategoryDetailView, self).get_context_data(**kwargs)
         context['categorys'] = ArticleCategory.objects.all()
         context['contact'] = Contact_us.objects.all()
-        context['cat_feed'] = RelationCategoryArticle.objects.filter(category_obj__slug=self.kwargs.get('slug'))
+        context['cat_feed'] = RelationCategoryArticle.objects.filter(category_obj__slug=kwargs.get('slug'))
         return context
