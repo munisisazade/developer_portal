@@ -8,14 +8,14 @@
             {% for news in cat_feed %}
             <article>
                 <div class="article_header">
-                    <time class="h3" datetime="2015-01-01">{{ news.date }}</time>
-                    <h3>{{ news.title }}</h3>
+                    <time class="h3" datetime="2015-01-01">{{ news.article_obj.date }}</time>
+                    <h3>{{ news.article_obj.title }}</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-5 col-sm-6 col-xs-12 mg-add">
                         <figure class="thumbnail">
-                            {% if news.get_images %}
-                                {% for img in news.get_images %}
+                            {% if news.article_obj.get_images %}
+                                {% for img in news.article_obj.get_images %}
                                  <a href=""><img src="/media/{{ img.image }}" alt="{{ img.image.name }}"></a>
                                 {% endfor %}
                             {% else %}
@@ -24,7 +24,7 @@
                         </figure>
                     </div>
                     <div class="col-md-7 col-sm-6 col-xs-12">
-                        {{ news.content|safe }}
+                        {{ news.article_obj.content|safe }}
                     </div>
                 </div>
             </article>
