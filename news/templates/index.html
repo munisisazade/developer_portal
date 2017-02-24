@@ -222,7 +222,13 @@
                             <article class="accordion_cnt row center767 ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-1-panel-0" aria-labelledby="ui-accordion-1-header-0" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
                                 <div class="col-md-5 col-sm-6 col-xs-12 mg-add">
                                     <figure class="thumbnail">
+                                        {% if news.get_images %}
+                                            {% for img in news.get_images %}
+                                             <a href=""><img src="/media/{{ img.image }}" alt="{{ img.image.name }}"></a>
+                                            {% endfor %}
+                                        {% else %}
                                         <a href="#"><img src="{% static 'images/page-1_img01.jpg' %}" alt=""></a>
+                                        {% endif %}
                                     </figure>
                                 </div>
                                 <div class="col-md-7 col-sm-6 col-xs-12">

@@ -120,6 +120,14 @@ class Article(models.Model):
     home_page_status = models.BooleanField(default=True,verbose_name="Ana səhifədə görünsün?")
     date = models.DateTimeField(default=timezone.now)
 
+    def get_images(self):
+        try:
+            item = ArticleImages.objects.filter(article_obj_id=self.id)
+            return item
+        except:
+            return False
+
+
     def __str__(self):
         return str(self.title)
 
