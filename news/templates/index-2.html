@@ -6,38 +6,16 @@
           <div class="container">
               <h2>Our Gallery</h2>
               <div class="gallery-wr offs clearfix gallery-wr__mod">
-                  <a class="thumb wow fadeIn animated" data-wow-duration="2s" data-wow-delay="0.2s" data-fancybox-group="2" href="images/page-3_img01_original.jpg" style="visibility: visible; animation-duration: 2s; animation-delay: 0.2s; animation-name: fadeIn;">
-                  <img src="images/page-3_img01.jpg" alt="">
+                  {% for image in albom %}
+                  <a class="thumb wow fadeIn animated" data-wow-duration="2s" data-wow-delay="0.2s" data-fancybox-group="2" href="/media/{{ image.image }}" style="visibility: visible; animation-duration: 2s; animation-delay: 0.2s; animation-name: fadeIn;">
+                  <img src="/media/{{ image.image }}" alt="">
                   <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
                   </a>
-                  <a class="thumb wow fadeIn animated" data-wow-duration="2s" data-wow-delay="0.4s" data-fancybox-group="2" href="images/page-3_img02_original.jpg" style="visibility: visible; animation-duration: 2s; animation-delay: 0.4s; animation-name: fadeIn;">
-                  <img src="images/page-3_img02.jpg" alt="">
-                  <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
-                  </a>
-                  <a class="thumb wow fadeIn animated" data-wow-duration="2s" data-wow-delay="0.6s" data-fancybox-group="2" href="images/page-3_img03_original.jpg" style="visibility: visible; animation-duration: 2s; animation-delay: 0.6s; animation-name: fadeIn;">
-                  <img src="images/page-3_img03.jpg" alt="">
-                  <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
-                  </a>
-                  <a class="thumb wow fadeIn animated" data-wow-duration="2s" data-wow-delay="0.8s" data-fancybox-group="2" href="images/page-3_img04_original.jpg" style="visibility: visible; animation-duration: 2s; animation-delay: 0.8s; animation-name: fadeIn;">
-                  <img src="images/page-3_img04.jpg" alt="">
-                  <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
-                  </a>
-                  <a class="thumb wow fadeIn animated" data-wow-duration="2s" data-wow-delay="1.0s" data-fancybox-group="2" href="images/page-3_img05_original.jpg" style="visibility: visible; animation-duration: 2s; animation-delay: 1s; animation-name: fadeIn;">
-                  <img src="images/page-3_img05.jpg" alt="">
-                  <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
-                  </a>
-                  <a class="thumb wow fadeIn animated" data-wow-duration="2s" data-wow-delay="1.2s" data-fancybox-group="2" href="images/page-3_img06_original.jpg" style="visibility: visible; animation-duration: 2s; animation-delay: 1.2s; animation-name: fadeIn;">
-                  <img src="images/page-3_img06.jpg" alt="">
-                  <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
-                  </a>
-                  <a class="thumb wow fadeIn animated" data-wow-duration="2s" data-wow-delay="1.4s" data-fancybox-group="2" href="images/page-3_img07_original.jpg" style="visibility: visible; animation-duration: 2s; animation-delay: 1.4s; animation-name: fadeIn;">
-                  <img src="images/page-3_img07.jpg" alt="">
-                  <span class="thumb_overlay"><span class="material-icons-zoom_in"></span></span>
-                  </a>
+                  {% endfor %}
               </div>
           </div>
       </section>
-      <section class="parallax parallax2 well5" data-url="images/parallax2.jpg" data-mobile="true">
+     <!-- <section class="parallax parallax2 well5" data-url="images/parallax2.jpg" data-mobile="true">
           <div class="parallax_image" style="background-image: url(&quot;images/parallax2.jpg&quot;); background-color: inherit; height: 724px; transform: translate3d(0px, -97.4593px, 0px);"></div>
           <div class="parallax_cnt">
               <div class="container text-right center767 wow fadeInLeft animated" data-wow-duration="2s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.2s; animation-name: fadeInLeft;">
@@ -108,6 +86,6 @@
                   </div>
               </div>
           </div>
-      </section>
+      </section>-->
   </main>
 {% endblock %}
