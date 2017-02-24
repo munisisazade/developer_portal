@@ -1,5 +1,5 @@
 from django.contrib import admin
-from news.models import Slider,How_it_works,Author,ArticleCategory,ArticleTags,RelationTagArticle,RelationCategoryArticle,ArticleImages,Article,Mesagges,Contact_us,PrivacyPolicy
+from news.models import Slider,How_it_works,Author,ArticleCategory,ArticleTags,RelationTagArticle,RelationCategoryArticle,ArticleImages,Article,Mesagges,Contact_us,PrivacyPolicy,Haqqimizda
 # Register your models here.
 
 class ImageTabularAdmin(admin.TabularInline):
@@ -55,7 +55,7 @@ class How_it_worksAdmin(admin.ModelAdmin):
 
 
 
-
+admin.site.register(Haqqimizda)
 admin.site.register(Slider,SliderAdmin)
 admin.site.register(How_it_works,How_it_worksAdmin)
 admin.site.register(Author,AuthorAdmin)
