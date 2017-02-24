@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.urls import  reverse
 from django.views.generic import TemplateView,DetailView
 # Create your views here
-from news.models import Slider,How_it_works,ArticleCategory,Contact_us,ArticleCategory,Article,RelationCategoryArticle,ArticleImages
+from news.models import Slider,How_it_works,ArticleCategory,Contact_us,ArticleCategory,Article,RelationCategoryArticle,ArticleImages,Haqqimizda
 """
     Just in case test views
 """
@@ -36,6 +36,11 @@ class TestView(TemplateAllData):
 
 class AboutView(TemplateAllData):
     template_name = 'index-1.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutView, self).get_context_data(**kwargs)
+        context['contact_object'] = Haqqimizda.objects.all()[0]
+        return context
 
 class GalleryView(TemplateAllData):
     template_name = 'index-2.html'
