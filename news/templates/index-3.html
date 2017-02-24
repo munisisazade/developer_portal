@@ -4,28 +4,38 @@
     <section class="well2">
         <div class="container">
             <h2>{{ object.title }}</h2>
+            {% for news in cat_feed %}
             <article>
                 <div class="article_header">
-                    <time class="h3" datetime="2015-01-01">12/09</time>
-                    <h3>Congratulations to our P.R.I.D.E. Winners</h3>
+                    <time class="h3" datetime="2015-01-01">{{ news.date }}</time>
+                    <h3>{{ news.title }}</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-5 col-sm-6 col-xs-12 mg-add">
                         <figure class="thumbnail">
-                            <a href="#"><img src="images/page-4_img01.jpg" alt=""></a>
+                            {% if news.get_images %}
+                                {% for img in news.get_images %}
+                                 <a href=""><img src="/media/{{ img.image }}" alt="{{ img.image.name }}"></a>
+                                {% endfor %}
+                            {% else %}
+                            <a href="#"><img src="{% static 'images/page-1_img01.jpg' %}" alt=""></a>
+                            {% endif %}
                         </figure>
                     </div>
                     <div class="col-md-7 col-sm-6 col-xs-12">
-                        <p>Congratulations to Teresa Budd from Page Middle School and Mariah Yazzie from Manson Mesa High School, two of our November P.R.I.D.E. recipients! Along with Michele
-                            Calnimptewa from Desert View Intermediate, Ms. Budd received Personal Recognition In District Education (PRIDE) to share the outstanding efforts of our certified and classified staff. Each school also recognizes those students who are Positive, Respectful, Involved, Determined, and Excellent (PRIDE) in the way they act and go about the business of learning. Congratulations to Keegan Dodson, Bronson Hicks, Sheldon Manymules, and Rachel Stice for demonstrating PRIDE in their education.
-                        </p>
+                        {{ news.content|safe }}
                     </div>
                 </div>
             </article>
             <div class="container">
                 <hr>
             </div>
-            <article>
+            {% empty %}
+            <div class="container">
+                <h1>Bu kateqoriyaya aid xəbər yoxdur</h1>
+            </div>
+            {% endfor %}
+            <!--<article>
                 <div class="article_header">
                     <time class="h3" datetime="2015-01-01">17/09</time>
                     <h3>Beat the Winter Blues with Community Education - Now Enrolling</h3>
@@ -34,10 +44,10 @@
                     Our class catalog can be found inserted into the Sunday, January 3, 2016 Idaho Statesman (subscribers only), mailed to local residents (by January 8, 2016), in Boise Public Library branches, online at www.boiselearns.org, or click on the course catalog image below. Click here to review a PDF of the catalog. Winter session runs
                     January 25th through March 17th. Register up to the night a class begins (space permitting). Registration continues through the end of the session.
                 </p>
-            </article>
+            </article>-->
         </div>
     </section>
-    <section class="well6 bg-primary">
+    <!--<section class="well6 bg-primary">
         <div class="container center767">
             <h2>Upcoming Board Meetings</h2>
             <div class="row offs3">
@@ -145,6 +155,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 </main>
 {% endblock %}
