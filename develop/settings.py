@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ermn@t3e6)2lwtgca9nfyxf$h6b9fpo%(!h%mtgt7tyy2ut6m*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
-if DEBUG:
+if not DEBUG:
     ALLOWED_HOSTS = ['www.itelpark.com','itelpark.com']
 else:
     ALLOWED_HOSTS = ['*']
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'rest_framework',
-    'api.apps.ApiConfig',
+    # 'api.apps.ApiConfig',
     'news.apps.NewsConfig',
 ]
 
@@ -160,7 +160,7 @@ WSGI_APPLICATION = 'develop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-if DEBUG:
+if not DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -217,7 +217,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-if DEBUG:
+if not DEBUG:
     STATIC_ROOT = 'static'
 
 else:
