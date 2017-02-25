@@ -23,10 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ermn@t3e6)2lwtgca9nfyxf$h6b9fpo%(!h%mtgt7tyy2ut6m*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['www.itelpark.com','itelpark.com']
+
+if DEBUG:
+    ALLOWED_HOSTS = ['www.itelpark.com','itelpark.com']
+else:
+    ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
+    'rest_framework',
     'news.apps.NewsConfig',
 ]
 
@@ -112,7 +116,13 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 
 MIDDLEWARE = [
@@ -149,20 +159,24 @@ WSGI_APPLICATION = 'develop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'develop_usta',
-        'USER': 'develop_user',
-        'PASSWORD': '7HRdMcOvx6toidiEPFTKCAE8gNdA6C04',
-        'HOST': 'localhost',
-        'PORT': '',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'develop_usta',
+            'USER': 'develop_user',
+            'PASSWORD': '7HRdMcOvx6toidiEPFTKCAE8gNdA6C04',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
@@ -202,12 +216,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
-# STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, "static"),
-#    '/home/munis/Documents/unicopycenter/static',
-# ]
+if DEBUG:
+    STATIC_ROOT = 'static'
 
+else:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static"),
+        '/home/munis/Documents/unicopycenter/static',
+    ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
