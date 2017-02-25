@@ -11,7 +11,7 @@ from news.models import Slider,How_it_works,ArticleCategory,Contact_us,ArticleCa
 
 
 def index(request):
-    return redirect(reverse('main-index'))
+    return redirect(reverse('coming-soon'))
 
 class TemplateAllData(TemplateView):
 
