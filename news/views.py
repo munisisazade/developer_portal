@@ -68,3 +68,7 @@ class CategoryDetailView(DetailView):
         context['contact'] = Contact_us.objects.all()
         context['cat_feed'] = RelationCategoryArticle.objects.filter(category_obj__slug=self.kwargs.get('slug'),article_obj__status=True)
         return context
+
+
+class ComingSoonView(TemplateView):
+    template_name = 'coming-soon.html'
