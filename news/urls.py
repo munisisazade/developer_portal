@@ -9,6 +9,6 @@ urlpatterns = [
     url(r'^contact.aspx$', ContactsView.as_view(), name='contact'),
     url(r'^privacy_policy.aspx$', PrivacyView.as_view(), name='privacy'),
     url(r'^category/(?P<slug>[-\w]+).aspx$',CategoryDetailView.as_view(), name='category'),
-    url(r'^test/$', ComingSoonView.as_view(), 'coming-soon'),
+    url(r'^test/$', ComingSoonView.as_view(), name='coming-soon'),
     # url(r'^',include('news.urls')),
 ]
