@@ -71,4 +71,4 @@ class CategoryDetailView(DetailView):
 
 
 class ComingSoonView(TemplateView):
-    template_name = 'coming-soon.html'
+    template_name = 'comin-soon.html'
