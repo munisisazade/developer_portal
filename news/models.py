@@ -127,6 +127,12 @@ class Article(models.Model):
         except:
             return False
 
+    def article_tags(self):
+        try:
+            item = RelationCategoryArticle.objects.filter()
+        except:
+            pass
+
 
     def __str__(self):
         return str(self.title)
