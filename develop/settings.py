@@ -28,8 +28,10 @@ DEBUG = False
 
 if not DEBUG:
     ALLOWED_HOSTS = ['www.itelpark.com','itelpark.com']
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 else:
     ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
