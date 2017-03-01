@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^Adminqaqalar.aspx', admin.site.urls),
     url(r'^',include('news.urls')),
     # url(r'^api/', include('api.urls')),
+    url(r'^football/', include('football.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
