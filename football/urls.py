@@ -1,8 +1,9 @@
 from django.conf.urls import url
 from django.views.generic import TemplateView
+from football.views import ScreapyView
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='html/index.html'),name='home'),
+    url(r'^$', ScreapyView.as_view(),name='home'),
     url(r'^index.html/$', TemplateView.as_view(template_name='html/index.html'),name='home'),
     url(r'^404.html/$', TemplateView.as_view(template_name='html/404.html'), name='404'),
     url(r'^checkout.html/$', TemplateView.as_view(template_name='html/checkout.html'),name='checkout'),
