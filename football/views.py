@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from football.utilits.tool import LiveWebCrawlerMixin
 
+import dryscrape as Firefox
+from bs4 import BeautifulSoup as bs
 # Create your views here.
 
 
@@ -22,3 +26,20 @@ from django.shortcuts import render
 
 
 """
+
+class ScreapyView(LiveWebCrawlerMixin):
+    template_name = 'html/index.html'
+    crawl_url = 'http://www.livescore.com/'
+    data_class = {'data-type':'container'}
+
+    def get_football_data(self):
+        session = Firefox.Session()
+        session.visit(self.crawl_url)
+        response = session.body()
+        soup = bs(response,'html.parser')
+        result = soup.find('div',self.data_class)
+        return result
+
+    def get(self, request, *args, **kwargs):
+        find = self.get_football_data()
+        return HttpResponse(find)
