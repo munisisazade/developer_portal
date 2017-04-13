@@ -1,6 +1,5 @@
 from django.conf.urls import url
 from django.views.generic import TemplateView
-from football.views import ScreapyView
 
 urlpatterns = [
     url(r'^$', ScreapyView.as_view(),name='home'),
