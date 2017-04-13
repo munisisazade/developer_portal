@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from football.utilits.tool import LiveWebCrawlerMixin
-
-import dryscrape as Firefox
-from bs4 import BeautifulSoup as bs
+#
+# import dryscrape as Firefox
+# from bs4 import BeautifulSoup as bs
 # Create your views here.
 
 
