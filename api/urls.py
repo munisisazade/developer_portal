@@ -7,6 +7,5 @@ urlpatterns = [
     url(r'^user-list/$', UserList.as_view(), name='user-list'),
     url(r'^news-list/$', NewsList.as_view(), name='news-list'),
     url(r'^article/(?P<pk>[0-9]+)$', ArticleDetail.as_view(), name='article-detail'),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
 ]
