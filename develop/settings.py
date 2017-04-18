@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'rest_framework',
-    # 'api.apps.ApiConfig',
+    'api.apps.ApiConfig',
     'football.apps.FootballConfig',
     'news.apps.NewsConfig',
 ]
