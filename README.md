@@ -1,6 +1,6 @@
 # README #
 
-# Developer Network #
+# Restaurant #
 
 ### --- How to install and use for Linux ###
 
