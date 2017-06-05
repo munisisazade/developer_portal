@@ -242,3 +242,45 @@ else:
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
+
+LOG_ROOT = os.path.join(BASE_DIR,'logs')
+LOG_LEVEL = 'DEBUG'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': not DEBUG,  # True,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s:=> %(message)s',
+        },
+        'focused': {
+            'format': '\n----------------------\n%(asctime)s [%(levelname)s] %(name)s:=> %(message)s \n----------------------',
+        },
+    },
+    'handlers': {
+        'my_custom_debug': {
+            'level': LOG_LEVEL,
+            'class': 'logging.FileHandler',
+            'filename': '%s/mylog.log' % LOG_ROOT,
+            'formatter': 'focused',
+        },
+        'request_handler': {
+            'level': LOG_LEVEL,
+            'class': 'logging.FileHandler',
+            'filename': '%s/django_requests.log' % LOG_ROOT,
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['my_custom_debug'],
+            'level': LOG_LEVEL,
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['request_handler'],
+            'level': LOG_LEVEL,
+            'propagate': True,
+        },
+    },
+}
