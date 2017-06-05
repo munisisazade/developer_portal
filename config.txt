@@ -1,0 +1,5 @@
+# This file automaticly created 
+
+APP_DB_NAME=develop_usta
+APP_DB_USER=develop_user
+APP_DB_PASSWORD=7HRdMcOvx6toidiEPFTKCAE8gNdA6C04

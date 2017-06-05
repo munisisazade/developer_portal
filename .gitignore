@@ -7,6 +7,7 @@ __pycache__/
 *.so
 .idea/
 check.sh
+flush_db.sh
 db.sqlite3
 makemigrations.sh
 node_modules/
