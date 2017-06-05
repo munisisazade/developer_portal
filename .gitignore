@@ -5,6 +5,7 @@ __pycache__/
 .gitignore.swp
 # C extensions
 *.so
+.idea/
 check.sh
 db.sqlite3
 makemigrations.sh
