@@ -43,8 +43,9 @@ xmlns:content="http://purl.org/rss/1.0/modules/content/">
 
                 <h1>{{ feed.title }}</h1>
               </header>
-
-               {{ feed.content|safe }}
+                    {% autoescape on %}
+                    {{ feed.content }}
+                    {% endautoescape %}
 
               <footer>
                     ITELPARK.COM © 2017 itelpark
