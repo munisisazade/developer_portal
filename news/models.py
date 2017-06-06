@@ -129,7 +129,8 @@ class Article(models.Model):
 
     def article_tags(self):
         try:
-            item = RelationCategoryArticle.objects.filter()
+            item = RelationCategoryArticle.objects.filter(article_obj=self).last()
+            return item.category_obj
         except:
             pass
 

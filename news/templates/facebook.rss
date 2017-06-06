@@ -11,7 +11,7 @@ xmlns:content="http://purl.org/rss/1.0/modules/content/">
     {% for feed in facebook_rss %}
     <item>
       <title>{{ feed.title }}</title>
-      <link>https://itelpark.com/category/machine-learning.aspx</link>
+      <link>https://itelpark.com/category/{{ feed.article_tags.slug }}.aspx</link>
       <pubDate>2017-6-6T14:56:16Z</pubDate>
       <author>Munis Isazade</author>
       <description>{{ feed.title }}</description>
