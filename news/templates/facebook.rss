@@ -1,0 +1,61 @@
+<rss version="2.0"
+xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ title }}</title>
+    <link>{{ link }}</link>
+    <description>
+      {{ description }}
+    </description>
+    <language>{{ lang }}</language>
+    <lastBuildDate>2017-6-6T14:56:16Z</lastBuildDate>
+    {% for feed in facebook_rss %}
+    <item>
+      <title>{{ feed.title }}</title>
+      <link>https://itelpark.com/category/machine-learning.aspx</link>
+      <pubDate>2017-6-6T14:56:16Z</pubDate>
+      <author>Munis Isazade</author>
+      <description>{{ feed.title }}</description>
+      <content:encoded>
+        <![CDATA[
+        <!doctype html>
+        <html lang="en" prefix="op: http://media.facebook.com/op#">
+          <head>
+              <meta charset="utf-8">
+              <meta property="op:markup_version" content="v1.0">
+
+              <!-- The URL of the web version of your article -->
+              <link rel="canonical" href="{{ link }}/category/machine-learning.aspx">
+
+              <!-- The style to be used for this article -->
+              <meta property="fb:article_style" content="default">
+
+          </head>
+          <body>
+            <article>
+              <header>
+                 {% if feed.get_images %}
+                    {% for img in feed.get_images %}
+                     <figure>
+                        <img src="{{ link }}/media/{{ img.image }}" alt="{{ img.image.name }}" />
+                     </figure>
+                 {% endfor %}
+                {% endif %}
+
+                <h1>{{ feed.title }}</h1>
+              </header>
+
+              <p>{{ feed.content|safe }}</p>
+
+              <footer>
+                    ITELPARK.COM © 2017 itelpark
+              </footer>
+            </article>
+          </body>
+        </html>
+        ]]>
+      </content:encoded>
+    </item>
+    {% endfor %}
+
+  </channel>
+</rss>

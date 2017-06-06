@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect,render_to_response
 from django.template import RequestContext
 from django.http import HttpResponse
 from django.urls import  reverse
-from django.views.generic import TemplateView,DetailView
+from django.views.generic import TemplateView,DetailView, View
+from django.conf import settings
 # Create your views here
 from news.models import Slider,How_it_works,ArticleCategory,Contact_us,ArticleCategory,Article,RelationCategoryArticle,ArticleImages,Haqqimizda
 """
@@ -72,3 +73,18 @@ class CategoryDetailView(DetailView):
 
 class ComingSoonView(TemplateView):
     template_name = 'comin-soon.html'
+
+
+class FacebookInstantArticleRss(View):
+    title = "Itelpark.com - Devloper Portal"
+    description = "Developer Portal"
+    link = settings.HOST
+
+    def get(self, request, *args, **kwargs):
+        data = {}
+        data['title'] = self.title
+        data['link'] = self.link
+        data['description'] = self.description
+        data['lang'] = 'en-us'
+        data['facebook_rss'] = Article.objects.all()
+        return render(request, 'facebook.rss', data, content_type='application/rss+xml')
