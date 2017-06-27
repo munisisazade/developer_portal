@@ -38,7 +38,6 @@ else:
 # for security reasons
 if not DEBUG:
     CSRF_COOKIE_SECURE=True
-    CSRF_COOKIE_HTTPONLY=False
     SESSION_COOKIE_SECURE=True
     SECURE_CONTENT_TYPE_NOSNIFF=True
     SECURE_BROWSER_XSS_FILTER=True
