@@ -36,7 +36,7 @@ else:
     ALLOWED_HOSTS = ['*']
 
 # for security reasons
-if not DEBUG:
+
     # CSRF_COOKIE_SECURE=True
     # SESSION_COOKIE_SECURE=True
     # SECURE_CONTENT_TYPE_NOSNIFF=True
